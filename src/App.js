@@ -1,23 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div class="calculator">
+        <input type="text" />
+
+        <div class="calculator-buttons">
+          <div class="is-divider"></div>
+          <button class="calc-button is-reverse">C</button>
+          <button class="calc-button is-reverse">%</button>
+          <button class="calc-button is-reverse">+</button>
+          <button class="calc-button is-red">÷</button>
+
+          <button class="calc-button">7</button>
+          <button class="calc-button">8</button>
+          <button class="calc-button">9</button>
+          <button class="calc-button is-red">×</button>
+
+          <button class="calc-button">4</button>
+          <button class="calc-button">5</button>
+          <button class="calc-button">6</button>
+          <button class="calc-button is-red">−</button>
+
+          <button class="calc-button">1</button>
+          <button class="calc-button">2</button>
+          <button class="calc-button">3</button>
+          <button class="calc-button is-red">+</button>
+
+          <button class="calc-button is-zero">0</button>
+          <button class="calc-button">.</button>
+          <button class="calc-button is-red"> = </button>
+        </div>
+      </div>
     </div>
   );
 }
