@@ -1,12 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 .calculator input,
-.calc-button {
+.calculator-buttons button {
   font-family: 'Open Sans', sans-serif;
   font-weight: bolder;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 html {
-  background-color: #ef2d4f;
+  background: linear-gradient(-45deg, #e73c7e, #23a6d5);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 }
@@ -50,7 +64,7 @@ body {
   grid-gap: 20px;
 }
 
-.calc-button {
+.calculator-buttons button {
   background: #e6e6e6; /* light background with opacity 50% */
   background-position: center;
   padding: 20px;
@@ -63,11 +77,11 @@ body {
   transition: 0.8s;
 }
 
-.calc-button:hover {
+.calculator-buttons button:hover {
   background: #bdbdbd radial-gradient(circle, transparent 1%, #bdbdbd 1%) center/15000%;
 }
 
-.calc-button:active {
+.calculator-buttons button:active {
   background-color: #cecece;
   background-size: 100%;
   transition: background 0s;
@@ -77,20 +91,16 @@ body {
   filter: invert(0.9);
 }
 
-.is-red {
+button.is-red {
   background-color: #ef2d4f;
   color: #fff;
 }
 
-.is-red:hover {
-  background-color: #c32441;
+button.is-red:hover {
+  background: #be2440 radial-gradient(circle, transparent 1%, #ef2d4f 1%) center/15000%;
 }
 
-.is-red:hover {
-  background: #ef2d4f radial-gradient(circle, transparent 1%, #ef2d4f 1%) center/15000%;
-}
-
-.is-red:active {
+button.is-red:active {
   background-color: #c32441;
   background-size: 100%;
   transition: background 0s;
@@ -120,7 +130,7 @@ body {
   border-radius: 50px;
   background-color: #e6e6e6;
 }
-.calculator input {
+.calculator .result {
   /* reset basic form styles */
   background: none;
   border: none;
