@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
@@ -28,7 +28,6 @@ function App() {
   };
 
   const operation = (operation) => {
-    console.log(previous);
     setCleanInput(true);
 
     if (operation === '.') {
@@ -43,26 +42,20 @@ function App() {
     if (typeof actual == 'string') {
       const sliced = actual.slice(0, -1);
       setActual(sliced);
-      console.log(actual);
     }
     if (typeof previous.number == 'string') {
       const sliced = previous.number.slice(0, -1);
       setPrevious({ ...previous, number: sliced });
     }
-    console.log(previous);
 
     if (operation === 'C') return setStates(null, 0);
     if (operation === '%') return setStates('%', actual / 100);
 
     switch (previous.operation) {
       case null:
-        console.log('w');
-        console.log(actual);
         setPrevious({ operation: operation, number: actual });
         break;
       case '+':
-        console.log('w');
-        console.log(actual);
         setStates(operation, previous.number + actual);
         break;
       case '-':
@@ -78,13 +71,8 @@ function App() {
         setStates(operation, actual);
         break;
     }
-    console.log(previous);
     if (operation === '=') return setPrevious({ number: null, operation: null });
   };
-
-  useEffect(() => {
-    console.log(actual);
-  }, [actual]);
 
   return (
     <div className="App">
