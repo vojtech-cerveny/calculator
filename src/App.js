@@ -15,6 +15,7 @@ function App() {
   };
 
   const setStates = (operation, number) => {
+    console.log('something');
     setActual(number);
     setPrevious({ operation: operation, number: number });
   };
